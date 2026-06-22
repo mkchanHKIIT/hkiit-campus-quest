@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HKIIT Campus Quest 3D</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div id="startScreen" class="screen">
+    <div class="card">
+      <h1>HKIIT Campus Quest 3D</h1>
+      <p class="tagline">Guided by the challenges of tomorrow, to nurture the ambitions of today.</p>
+      <p>
+        Explore <strong>6 real HKIIT campus sites</strong> on a 3D Hong Kong map — each building is modelled after its actual IVE/VTC architecture. Follow the <strong>green arrow</strong> and minimap. At each campus, complete
+        <strong>programme area challenges</strong> — one dedicated question per ICT, DMET &amp; Foundation area.
+      </p>
+      <ul class="feature-list">
+        <li>16 programme areas · 16 unique questions</li>
+        <li>ICT: Software Eng, Cybersecurity, Cloud, AI, Data Science…</li>
+        <li>DMET: Games &amp; Animation, Digital Media, Esports, Drone Tech…</li>
+      </ul>
+      <p class="controls-hint">
+        <kbd>WASD</kbd> move · <kbd>E</kbd> interact · <strong>Drag mouse</strong> rotate camera · <kbd>Scroll</kbd> zoom · <kbd>Q</kbd>/<kbd>R</kbd> turn view
+      </p>
+      <button type="button" class="btn btn-primary" id="btnStart">Enter 3D World</button>
+    </div>
+  </div>
+
+  <div id="winScreen" class="screen hidden">
+    <div class="card">
+      <h1>Quest Complete!</h1>
+      <p id="winSummary"></p>
+      <p>You've mastered every HKIIT programme area across all campuses.</p>
+      <a class="btn btn-primary" href="https://www.hkiit.edu.hk/our-programmes" target="_blank" rel="noopener">Explore Programmes</a>
+      <button type="button" class="btn btn-ghost" id="btnReplay">Play Again</button>
+    </div>
+  </div>
+
+  <div id="hud" class="hud hidden">
+    <header class="hud-header">
+      <h1>HKIIT Campus Quest 3D</h1>
+      <span class="subtitle">Hong Kong Institute of Information Technology</span>
+    </header>
+    <div class="stats">
+      <div class="stat">Score <strong id="score">0</strong></div>
+      <div class="stat">Energy <strong id="energy">100</strong></div>
+      <div class="stat">Campuses <strong id="campuses">0 / 6</strong></div>
+      <div class="stat">Areas <strong id="areas">0 / 16</strong></div>
+    </div>
+    <div id="interactHint" class="interact-hint">Press E — Campus Challenge</div>
+    <div id="navBanner" class="nav-banner">
+      <span class="nav-arrow">➜</span>
+      <div>
+        <strong id="navTitle">→ Campus</strong>
+        <span id="navMeta" class="nav-meta"></span>
+        <span id="navDistrict" class="nav-district"></span>
+      </div>
+    </div>
+  </div>
+
+  <div id="game-container"></div>
+
+  <aside id="sidebar" class="sidebar">
+    <h3>Hong Kong map</h3>
+    <canvas id="minimap" class="minimap" width="196" height="140" aria-label="Hong Kong campus minimap"></canvas>
+    <p class="minimap-legend">Green dot = you · Coloured = campus</p>
+    <h3>Programme badges</h3>
+    <div id="badgeGrid" class="badge-grid"></div>
+    <h3>Mission log</h3>
+    <div id="log" class="log"><div>Press Start to begin your 3D campus quest.</div></div>
+  </aside>
+
+  <div id="quizOverlay" class="overlay">
+    <div class="modal">
+      <span id="areaTag" class="area-tag"></span>
+      <h2 id="modalTitle">Programme Area</h2>
+      <p id="modalCampus" class="modal-meta"></p>
+      <p id="modalFact" class="modal-fact"></p>
+      <p id="quizPrompt" class="quiz-prompt"></p>
+      <div id="quizOptions" class="quiz-options"></div>
+      <p id="quizExplanation" class="quiz-explanation"></p>
+      <button type="button" class="btn btn-ghost" id="btnCloseQuiz">Close</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    Based on HKIIT 2025/26 programme booklet ·
+    <a href="https://www.hkiit.edu.hk/about-hkiit" target="_blank" rel="noopener">About HKIIT</a>
+  </footer>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

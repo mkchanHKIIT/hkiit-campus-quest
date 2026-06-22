@@ -1,0 +1,19 @@
+{
+  "name": "hkiit-campus-quest-3d",
+  "version": "2.0.0",
+  "description": "3D HKIIT Campus Quest — explore campuses and master programme area challenges",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.170.0",
+    "typescript": "^5.7.2",
+    "vite": "^4.5.0"
+  }
+}
