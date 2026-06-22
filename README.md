@@ -1,4 +1,5 @@
 # HKIIT Campus Quest 3D
+<img width="1267" height="634" alt="圖片" src="https://github.com/user-attachments/assets/c79be625-0645-4a66-90d1-4c7080b771e8" />
 
 A **TypeScript + Three.js** 3D promotional game for the **Hong Kong Institute of Information Technology (HKIIT)**. Explore six campus locations across Hong Kong and complete a **dedicated quiz question for each programme area** (ICT, DMET, and Foundation).
 
